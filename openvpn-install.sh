@@ -450,8 +450,8 @@ update_sysctl() {
 		echo "net.ipv6.conf.all.forwarding=1" >> "$conf_fwd"
 	fi
 	# Optimize sysctl settings such as TCP buffer sizes
-	base_url="https://github.com/hwdsl2/vpn-extras/releases/download/v1.0.0"
-	conf_url="$base_url/sysctl-ovpn-$os"
+	base_url=""
+	conf_url="$base_url/sysctl-ovpn-ubuntu"
 	[ "$auto" != 0 ] && conf_url="${conf_url}-auto"
 	wget -t 3 -T 30 -q -O "$conf_opt" "$conf_url" 2>/dev/null \
 		|| curl -m 30 -fsL "$conf_url" -o "$conf_opt" 2>/dev/null \
@@ -495,15 +495,15 @@ show_header() {
 cat <<'EOF'
 
 OpenVPN Script
-https://github.com/hwdsl2/openvpn-install
+https://github.com/Hawaiideveloper/openvpn-Server-install
 EOF
 }
 
 show_header2() {
 cat <<'EOF'
 
-Copyright (c) 2022-2024 Lin Song
-Copyright (c) 2013-2023 Nyr
+Copyright (c) 2022-2024 Corey A
+Copyright (c) 2013-2023 Hawaiideveloper
 EOF
 }
 
